@@ -32,6 +32,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\PayrollData.cs" />
+    <Compile Include="Common\Period.cs" />
+    <Compile Include="Payroll\PayrollService.cs" />
+    <Compile Include="Common\DecimalOperations.cs" />
+    <Compile Include="Common\RoundingOperations.cs" />
+    <Compile Include="Payroll\PeriodService.cs" />
+    <Compile Include="Payroll\TimeSheetService.cs" />
+    <Compile Include="Common\MinMaxOperations.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />

@@ -14,8 +14,8 @@ namespace PaycheckitasLib
 		public decimal TaxComputed {get; set;}
 		public decimal TaxAllowance {get; set;}
 		public decimal TaxAdvance {get; set;}
-		public decimal SocialInsurance {get; set;}
 		public decimal HealthInsurance {get; set;}
+		public decimal SocialInsurance { get; set; }
 		public decimal GrossIncome {get; set;}
 		public decimal NetIncome {get; set;}
 		public decimal MealDeduction { get; set; }
@@ -32,8 +32,8 @@ namespace PaycheckitasLib
 			TaxComputed = 0;
 			TaxAllowance = 0;
 			TaxAdvance = 0; 
-			SocialInsurance = 0;
 			HealthInsurance = 0;
+			SocialInsurance = 0;
 			GrossIncome = 0;
 			NetIncome = 0;
 			MealDeduction = 0;
@@ -55,9 +55,9 @@ namespace PaycheckitasLib
 			return AbsenceMinutes / 60m; 
 		}
 
-		public decimal BonusProcent ()
+		public decimal BonusFactor ()
 		{
-			return BonusProcent100 / 100m;
+			return DecimalOperations.Divide (BonusProcent100, 100m);
 		}
 	}
 }
