@@ -1,6 +1,6 @@
 ﻿using System;
 namespace PaycheckitasLib
-{
+{   
 	public class Period
 	{
 		public int Month { get; set; }
