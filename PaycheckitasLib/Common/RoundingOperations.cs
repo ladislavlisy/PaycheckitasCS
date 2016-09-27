@@ -3,6 +3,13 @@ namespace PaycheckitasLib
 {
 	public static class RoundingOperations
 	{
+		public const Int32 NUMBER_ONE_HUNDRED = 100;
+
+		public static decimal DecRoundUpHundreds(decimal valueDec)
+		{
+			return RoundingOperations.NearRoundUp(valueDec, NUMBER_ONE_HUNDRED);
+		}
+
 		public static decimal RoundUp (decimal valueDec)
 		{
 			decimal roundRet = decimal.Ceiling (Math.Abs (valueDec));

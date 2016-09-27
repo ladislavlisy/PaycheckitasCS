@@ -39,6 +39,9 @@
     <Compile Include="Payroll\PeriodService.cs" />
     <Compile Include="Payroll\TimeSheetService.cs" />
     <Compile Include="Common\MinMaxOperations.cs" />
+    <Compile Include="Payroll\HealthService.cs" />
+    <Compile Include="Payroll\SocialService.cs" />
+    <Compile Include="Payroll\TaxingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />

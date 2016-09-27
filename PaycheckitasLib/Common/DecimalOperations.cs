@@ -3,6 +3,13 @@ namespace PaycheckitasLib
 {
 	public static class DecimalOperations
 	{
+		public const decimal NUMBER_ONE_HUNDRED = 100m;
+
+		public static decimal DecFactorResult(decimal valueDec, decimal factor)
+		{
+			return DecimalOperations.MultiplyAndDivide(valueDec, factor, NUMBER_ONE_HUNDRED);
+		}
+
 		public static decimal Multiply (decimal op1, decimal op2)
 		{
 			return decimal.Multiply (op1, op2);
