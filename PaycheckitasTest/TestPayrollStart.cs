@@ -18,7 +18,7 @@ namespace PaycheckitasTest
 		{
 			Period period = new Period (2016, 1);
 
-			int workingHours = PayrollService.WorkingHoursResult (period);
+			UInt32 workingHours = (UInt32)PayrollService.WorkingHoursResult(period, 40);
 
 			Assert.AreEqual (10000m, PayrollService.SalaryResult (period, 10000m, workingHours, workingHours));
 		}

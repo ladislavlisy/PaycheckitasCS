@@ -9,12 +9,12 @@ namespace PaycheckitasLib
 
 		public static decimal HealthInsuranceFactor(Period period)
 		{
-			return DecimalOperations.Divide(135m, 1000m);
+			return HealthCzConstants2016.FACTOR_COMPOUND;
 		}
 
 		public static decimal HealthMandatoryBasis(Period period, bool dutyMandatory)
 		{
-			return dutyMandatory ? 9500m : 0m;
+			return dutyMandatory ? HealthCzConstants2016.MINIM_YEAR_BASE : 0m;
 		}
 
 		public static decimal BasisMandatoryBalance(Period period, bool dutyMandatory, decimal valResult)
@@ -58,7 +58,7 @@ namespace PaycheckitasLib
 
 		public static decimal HealthIncreaseFactor(Period period)
 		{
-			return DecimalOperations.Divide(135m, 1000m);
+			return HealthCzConstants2016.FACTOR_COMPOUND;
 		}
 
 	}

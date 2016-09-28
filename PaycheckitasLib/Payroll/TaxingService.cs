@@ -7,17 +7,22 @@ namespace PaycheckitasLib
 
 		static decimal MinimumIncomeToApplySolidaryIncrease(Period period)
 		{
-			return 106444m;
+			return TaxesCzConstants2016.BRACKET_MAX_SOLIDARY;
 		}
 
 		static decimal TaxAdvancesFactor(Period period)
 		{
-			return 15.0m;
+			return TaxesCzConstants2016.FACTOR_ADVANCE;
 		}
 
 		static decimal TaxSolidaryFactor(Period period)
 		{
-			return 7.0m;
+			return TaxesCzConstants2016.FACTOR_SOLIDARY;
+		}
+
+		public static decimal TaxPayerAllowance(Period monthPeriod)
+		{
+			return TaxesCzConstants2016.BENEFIT_PAYER;
 		}
 
 		public static decimal AdvancesTaxableHealth(Period period, bool advancesSubject, decimal taxableHealthIncome)

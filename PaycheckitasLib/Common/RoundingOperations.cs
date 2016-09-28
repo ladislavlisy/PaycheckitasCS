@@ -10,6 +10,13 @@ namespace PaycheckitasLib
 			return RoundingOperations.NearRoundUp(valueDec, NUMBER_ONE_HUNDRED);
 		}
 
+		public static decimal RoundToCZK(decimal valueDec)
+		{
+			decimal roundRet = decimal.Floor(Math.Abs(valueDec) + INT_ROUNDING_CONST);
+
+			return (valueDec < 0m ? decimal.Negate(roundRet) : roundRet);
+		}
+
 		public static decimal RoundUp (decimal valueDec)
 		{
 			decimal roundRet = decimal.Ceiling (Math.Abs (valueDec));

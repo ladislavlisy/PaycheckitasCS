@@ -12,6 +12,11 @@ namespace PaycheckitasLib
 			return RoundingOperations.RoundToInt (DecimalOperations.Multiply (hours, TIME_MULTIPLY_SIXTY * TIME_MULTIPLY_SIXTY));
 		}
 
+		public static int HoursToMinutes(decimal hours)
+		{
+			return RoundingOperations.RoundToInt(DecimalOperations.Multiply(hours, TIME_MULTIPLY_SIXTY));
+		}
+
 		public static Int32 [] WeekSchedule (Int32 secondsWeekly, Int32 workdaysWeekly)
 		{
 			Int32 secondsDaily = (secondsWeekly / Math.Min (workdaysWeekly, 7));
@@ -73,6 +78,19 @@ namespace PaycheckitasLib
 			Int32 timesheetHours = monthTimesheet.Aggregate (0, (agr, dh) => (agr + dh));
 
 			return timesheetHours;
+		}
+
+		public static Int32 TotalWorkingHours(Period period, decimal weklyHours)
+		{
+			Int32 workingWeeekHours = HoursToMinutes(weklyHours);
+
+			var workingWeeekSched = WeekSchedule(workingWeeekHours, 5);
+
+			var workingMonthSched = MonthSchedule(period, workingWeeekSched);
+
+			Int32 workingMonthHours = TotalTimesheetHours(workingMonthSched);
+
+			return workingMonthHours;
 		}
 	}
 }

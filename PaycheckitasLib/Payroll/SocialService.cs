@@ -7,7 +7,7 @@ namespace PaycheckitasLib
 
 		static decimal SocialInsuranceFactor(Period period)
 		{
-			return DecimalOperations.Divide(65m, 1000m);
+			return SocialCzConstants2016.FACTOR_EMPLOYEE;
 		}
 
 		public static decimal SocialInsuranceResult(Period period, decimal employeeBase)
@@ -25,7 +25,7 @@ namespace PaycheckitasLib
 
 		public static decimal SocialIncreaseFactor(Period period)
 		{
-			return DecimalOperations.Divide(250m, 1000m);
+			return SocialCzConstants2016.FACTOR_EMPLOYER;
 		}
 
 	}

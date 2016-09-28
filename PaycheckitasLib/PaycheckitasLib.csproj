@@ -42,11 +42,16 @@
     <Compile Include="Payroll\HealthService.cs" />
     <Compile Include="Payroll\SocialService.cs" />
     <Compile Include="Payroll\TaxingService.cs" />
+    <Compile Include="Payroll\EvaluationService.cs" />
+    <Compile Include="Constants\TaxingCzConstants.cs" />
+    <Compile Include="Constants\SocialCzConstants.cs" />
+    <Compile Include="Constants\HealthCzConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Payroll\" />
     <Folder Include="Data\" />
+    <Folder Include="Constants\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
