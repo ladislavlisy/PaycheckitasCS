@@ -39,5 +39,14 @@ namespace PaycheckitasLib
 		{
 			return new decimal (number);
 		}
+
+		public static decimal DecSuppressNegative(bool suppress, decimal valueDec)
+		{
+			if (suppress && valueDec < decimal.Zero)
+			{
+				return decimal.Zero;
+			}
+			return valueDec;
+		}
 	}
 }

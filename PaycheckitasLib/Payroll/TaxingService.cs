@@ -3,18 +3,7 @@ namespace PaycheckitasLib
 {
 	public static class TaxingService
 	{
-		const bool SUPPRESS_NEGAT = true;
-
-		const bool MANDATORY_DUTY = true;
-
-		public static decimal DecSuppressNegative(bool suppress, decimal valueDec)
-		{
-			if (suppress && valueDec < decimal.Zero)
-			{
-				return decimal.Zero;
-			}
-			return valueDec;
-		}
+		const bool TAXING_SUPPRESS_NEGAT = true;
 
 		static decimal MinimumIncomeToApplySolidaryIncrease(Period period)
 		{
@@ -92,7 +81,7 @@ namespace PaycheckitasLib
 
 		public static decimal AdvancesRoundedBasis(Period period, decimal taxableIncome)
 		{
-			decimal amountForCalc = DecSuppressNegative(SUPPRESS_NEGAT, taxableIncome);
+			decimal amountForCalc = DecimalOperations.DecSuppressNegative(TAXING_SUPPRESS_NEGAT, taxableIncome);
 
 			decimal advancesBasis = RoundingOperations.DecRoundUpHundreds(amountForCalc);
 
@@ -151,7 +140,29 @@ namespace PaycheckitasLib
 
 		public static decimal TaxAdvanceResult(Period period, decimal taxComputed, decimal taxAllowance)
 		{
-			return 0m;
+			decimal taxReliefsValue = TaxPayerRelief(taxComputed, 0m, taxAllowance);
+
+			decimal taxAdvanceValue = TaxAdvanceAfterRelief(taxComputed, taxReliefsValue, 0m);
+
+			return taxAdvanceValue;
+		}
+
+		private static decimal TaxPayerRelief(decimal advanceBaseValue, decimal reliefValue, decimal claimsValue)
+		{
+			decimal taxAfterRelief = decimal.Subtract(advanceBaseValue, reliefValue);
+
+			decimal maxAfterRelief = Math.Max(0m, decimal.Subtract(claimsValue, taxAfterRelief));
+
+			decimal taxReliefValue = decimal.Subtract(claimsValue, maxAfterRelief);
+			
+			return taxReliefValue;
+		}
+
+		private static decimal TaxAdvanceAfterRelief(decimal advanceBaseValue, decimal reliefPayerValue, decimal reliefChildValue)
+		{
+			decimal afterRelief = Math.Max(0, advanceBaseValue - reliefPayerValue - reliefChildValue);
+
+			return afterRelief;
 		}
 	}
 }

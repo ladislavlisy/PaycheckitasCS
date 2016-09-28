@@ -3,18 +3,9 @@ namespace PaycheckitasLib
 {
 	public static class HealthService
 	{
-		const bool SUPPRESS_NEGAT = true;
+		const bool HEALTH_SUPPRESS_NEGAT = true;
 
-		const bool MANDATORY_DUTY = true;
-
-		public static decimal DecSuppressNegative(bool suppress, decimal valueDec)
-		{
-			if (suppress && valueDec < decimal.Zero)
-			{
-				return decimal.Zero;
-			}
-			return valueDec;
-		}
+		const bool HEALTH_MANDATORY_DUTY = true;
 
 		public static decimal HealthInsuranceFactor(Period period)
 		{
@@ -41,11 +32,11 @@ namespace PaycheckitasLib
 
 		public static decimal HealthInsuranceResult(Period period, decimal employeeBase)
 		{
-			decimal mandatoryBasis = BasisMandatoryBalance(period, MANDATORY_DUTY, employeeBase);
+			decimal mandatoryBasis = BasisMandatoryBalance(period, HEALTH_MANDATORY_DUTY, employeeBase);
 
 			decimal compoundFactor = HealthInsuranceFactor(period);
 
-			decimal calculatedBase = DecSuppressNegative(SUPPRESS_NEGAT, employeeBase);
+			decimal calculatedBase = DecimalOperations.DecSuppressNegative(HEALTH_SUPPRESS_NEGAT, employeeBase);
 
 			Int32 insuranceResult = EmployeeHealthInsuranceWithFactor(calculatedBase, mandatoryBasis, compoundFactor);
 

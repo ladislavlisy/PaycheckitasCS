@@ -3,18 +3,7 @@ namespace PaycheckitasLib
 {
 	public static class SocialService
 	{
-		const bool SUPPRESS_NEGAT = true;
-
-		const bool MANDATORY_DUTY = true;
-
-		public static decimal DecSuppressNegative(bool suppress, decimal valueDec)
-		{
-			if (suppress && valueDec < decimal.Zero)
-			{
-				return decimal.Zero;
-			}
-			return valueDec;
-		}
+		const bool SOCIAL_SUPPRESS_NEGAT = true;
 
 		static decimal SocialInsuranceFactor(Period period)
 		{
@@ -25,7 +14,7 @@ namespace PaycheckitasLib
 		{
 			decimal employeeFactor = SocialInsuranceFactor(period);
 
-			decimal calculatedBase = DecSuppressNegative(SUPPRESS_NEGAT, employeeBase);
+			decimal calculatedBase = DecimalOperations.DecSuppressNegative(SOCIAL_SUPPRESS_NEGAT, employeeBase);
 
 			decimal decimalResult = DecimalOperations.DecFactorResult(calculatedBase, employeeFactor);
 

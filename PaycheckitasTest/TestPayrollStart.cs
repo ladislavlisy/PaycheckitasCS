@@ -5,7 +5,7 @@ using PaycheckitasLib;
 namespace PaycheckitasTest
 {
 	[TestFixture ()]
-	public class TestPayrollData
+	public class TestPayrollStart
 	{
 		[Test ()]
 		public void TestWorkingHours_ShouldBe_Zero_At_Start ()
