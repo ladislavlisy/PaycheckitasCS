@@ -9,12 +9,57 @@ namespace PaycheckitasLib
 
 		public static decimal HealthInsuranceFactor(Period period)
 		{
-			return HealthCzConstants2016.FACTOR_COMPOUND;
+			if (period.Year < 2016)
+			{
+				return 0;
+			}
+			switch (period.Year)
+			{
+				case 2011:
+					return HealthCzConstants2011.FACTOR_COMPOUND;
+				case 2012:
+					return HealthCzConstants2012.FACTOR_COMPOUND;
+				case 2013:
+					return HealthCzConstants2013.FACTOR_COMPOUND;
+				case 2014:
+					return HealthCzConstants2014.FACTOR_COMPOUND;
+				case 2015:
+					return HealthCzConstants2015.FACTOR_COMPOUND;
+				case 2016:
+					return HealthCzConstants2016.FACTOR_COMPOUND;
+				default:
+					return HealthCzConstants2016.FACTOR_COMPOUND;
+			}
+
 		}
 
 		public static decimal HealthMandatoryBasis(Period period, bool dutyMandatory)
 		{
-			return dutyMandatory ? HealthCzConstants2016.MINIM_YEAR_BASE : 0m;
+			if (!dutyMandatory)
+			{
+				return 0;
+			}
+			if (period.Year < 2016)
+			{
+				return 0;
+			}
+			switch (period.Year)
+			{
+				case 2011:
+					return HealthCzConstants2011.BASIS_MANDATORY;
+				case 2012:
+					return HealthCzConstants2012.BASIS_MANDATORY;
+				case 2013:
+					return HealthCzConstants2013.BASIS_MANDATORY;
+				case 2014:
+					return HealthCzConstants2014.BASIS_MANDATORY;
+				case 2015:
+					return HealthCzConstants2015.BASIS_MANDATORY;
+				case 2016:
+					return HealthCzConstants2016.BASIS_MANDATORY;
+				default:
+					return HealthCzConstants2016.BASIS_MANDATORY;
+			}
 		}
 
 		public static decimal BasisMandatoryBalance(Period period, bool dutyMandatory, decimal valResult)
@@ -58,7 +103,28 @@ namespace PaycheckitasLib
 
 		public static decimal HealthIncreaseFactor(Period period)
 		{
-			return HealthCzConstants2016.FACTOR_COMPOUND;
+			if (period.Year < 2016)
+			{
+				return 0;
+			}
+			switch (period.Year)
+			{
+				case 2011:
+					return HealthCzConstants2011.FACTOR_COMPOUND;
+				case 2012:
+					return HealthCzConstants2012.FACTOR_COMPOUND;
+				case 2013:
+					return HealthCzConstants2013.FACTOR_COMPOUND;
+				case 2014:
+					return HealthCzConstants2014.FACTOR_COMPOUND;
+				case 2015:
+					return HealthCzConstants2015.FACTOR_COMPOUND;
+				case 2016:
+					return HealthCzConstants2016.FACTOR_COMPOUND;
+				default:
+					return HealthCzConstants2016.FACTOR_COMPOUND;
+			}
+
 		}
 
 	}

@@ -7,22 +7,83 @@ namespace PaycheckitasLib
 
 		static decimal MinimumIncomeToApplySolidaryIncrease(Period period)
 		{
-			return TaxesCzConstants2016.BRACKET_MAX_SOLIDARY;
+			return TaxingCzConstants2016.MIN_INCOME_APPLY_SOLIDARY_INCREASE;
 		}
 
 		static decimal TaxAdvancesFactor(Period period)
 		{
-			return TaxesCzConstants2016.FACTOR_ADVANCE;
+			if (period.Year < 2016)
+			{
+				return 0;
+			}
+			switch (period.Year)
+			{
+				case 2011:
+					return TaxingCzConstants2011.FACTOR_ADVANCES;
+				case 2012:
+					return TaxingCzConstants2012.FACTOR_ADVANCES;
+				case 2013:
+					return TaxingCzConstants2013.FACTOR_ADVANCES;
+				case 2014:
+					return TaxingCzConstants2014.FACTOR_ADVANCES;
+				case 2015:
+					return TaxingCzConstants2015.FACTOR_ADVANCES;
+				case 2016:
+					return TaxingCzConstants2016.FACTOR_ADVANCES;
+				default:
+					return TaxingCzConstants2016.FACTOR_ADVANCES;
+			}
 		}
 
 		static decimal TaxSolidaryFactor(Period period)
 		{
-			return TaxesCzConstants2016.FACTOR_SOLIDARY;
+			if (period.Year < 2016)
+			{
+				return 0;
+			}
+			switch (period.Year)
+			{
+				case 2011:
+					return TaxingCzConstants2011.FACTOR_SOLIDARY;
+				case 2012:
+					return TaxingCzConstants2012.FACTOR_SOLIDARY;
+				case 2013:
+					return TaxingCzConstants2013.FACTOR_SOLIDARY;
+				case 2014:
+					return TaxingCzConstants2014.FACTOR_SOLIDARY;
+				case 2015:
+					return TaxingCzConstants2015.FACTOR_SOLIDARY;
+				case 2016:
+					return TaxingCzConstants2016.FACTOR_SOLIDARY;
+				default:
+					return TaxingCzConstants2016.FACTOR_SOLIDARY;
+			}
 		}
 
-		public static decimal TaxPayerAllowance(Period monthPeriod)
+		public static decimal TaxPayerAllowance(Period period)
 		{
-			return TaxesCzConstants2016.BENEFIT_PAYER;
+			if (period.Year < 2016)
+			{
+				return 0;
+			}
+			switch (period.Year)
+			{
+				case 2011:
+					return TaxingCzConstants2011.ALLOWANCE_PAYER_BASIC;
+				case 2012:
+					return TaxingCzConstants2012.ALLOWANCE_PAYER_BASIC;
+				case 2013:
+					return TaxingCzConstants2013.ALLOWANCE_PAYER_BASIC;
+				case 2014:
+					return TaxingCzConstants2014.ALLOWANCE_PAYER_BASIC;
+				case 2015:
+					return TaxingCzConstants2015.ALLOWANCE_PAYER_BASIC;
+				case 2016:
+					return TaxingCzConstants2016.ALLOWANCE_PAYER_BASIC;
+				default:
+					return TaxingCzConstants2016.ALLOWANCE_PAYER_BASIC;
+			}
+
 		}
 
 		public static decimal AdvancesTaxableHealth(Period period, bool advancesSubject, decimal taxableHealthIncome)

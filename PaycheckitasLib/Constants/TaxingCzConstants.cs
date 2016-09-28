@@ -1,141 +1,135 @@
 ﻿using System;
 namespace PaycheckitasLib
 {
-	class TaxesCzConstants2011
+	class TaxingCzConstants2011
 	{
-		public static readonly long BENEFIT_PAYER = 1970;
-
-		public static readonly long BENEFIT_DISABILITY_1 = 210;
-		public static readonly long BENEFIT_DISABILITY_2 = 420;
-		public static readonly long BENEFIT_DISABILITY_3 = 1345;
-
-		public static readonly long BENEFIT_STUDYING = 335;
-		public static readonly long BENEFIT_CHILD = 967;
-
-		public static readonly long BRACKET_MAX_WITHHOLD = 5000;
-		public static readonly decimal FACTOR_ADVANCE = 15.0m;
-		public static readonly decimal FACTOR_WITHHOLD = 15.0m;
-
-		public static readonly bool IS_SMALLER_ROUND_UP = true;
-		public static readonly long BRACKET_MAX_SMALLER = 100;
-
-		public static readonly bool IS_ZERO_SOLIDARY_TAX = true;
-		public static readonly decimal FACTOR_SOLIDARY = 0m;
-		public static readonly long BRACKET_MAX_SOLIDARY = 0;
+		public const Int32 ALLOWANCE_PAYER_BASIC = 1970; 
+		public const Int32 ALLOWANCE_PAYER_DIS_1ST = 210; 
+		public const Int32 ALLOWANCE_PAYER_DIS_2ND = 420; 
+		public const Int32 ALLOWANCE_PAYER_DIS_3RD = 1345; 
+		public const Int32 ALLOWANCE_PAYER_STUDYING = 335; 
+		public const Int32 ALLOWANCE_CHILD_RANK_1ST = 1117; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND_01_TO_04 = 0; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND = 1117; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD_01_TO_04 = 0; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD = 1117; 
+		public const decimal FACTOR_ADVANCES = 15.0m; 
+		public const decimal FACTOR_WITHHOLD = 15.0m; 
+		public const decimal FACTOR_SOLIDARY = 0.0m; 
+		public const Int32 MIN_VALID_AMOUNT_OF_TAXBONUS = 50; 
+		public const Int32 MAX_VALID_AMOUNT_OF_TAXBONUS = 5025; 
+		public const Int32 MIN_INCOME_REQUIRED_FOR_TAXBONUS = 8000; 
+		public const Int32 MAX_INCOME_APPLY_SINGELS_ROUNDING = 100; 
+		public const Int32 MAX_INCOME_APPLY_WITHHOLD_TAX = 5000; 
+		public const Int32 MIN_INCOME_APPLY_SOLIDARY_INCREASE = 0; 
 	}
-
-	class TaxesCzConstants2012
-	{
-		public static readonly long BENEFIT_PAYER = 2070;
-
-		public static readonly long BENEFIT_DISABILITY_1 = TaxesCzConstants2011.BENEFIT_DISABILITY_1;
-		public static readonly long BENEFIT_DISABILITY_2 = TaxesCzConstants2011.BENEFIT_DISABILITY_2;
-		public static readonly long BENEFIT_DISABILITY_3 = TaxesCzConstants2011.BENEFIT_DISABILITY_3;
-
-		public static readonly long BENEFIT_STUDYING = TaxesCzConstants2011.BENEFIT_STUDYING;
-		public static readonly long BENEFIT_CHILD = 1117;
-
-		public static readonly long BRACKET_MAX_WITHHOLD = TaxesCzConstants2011.BRACKET_MAX_WITHHOLD;
-		public static readonly decimal FACTOR_ADVANCE = TaxesCzConstants2011.FACTOR_ADVANCE;
-		public static readonly decimal FACTOR_WITHHOLD = TaxesCzConstants2011.FACTOR_WITHHOLD;
-
-		public static readonly bool IS_SMALLER_ROUND_UP = TaxesCzConstants2011.IS_SMALLER_ROUND_UP;
-		public static readonly long BRACKET_MAX_SMALLER = TaxesCzConstants2011.BRACKET_MAX_SMALLER;
-
-		public static readonly bool IS_ZERO_SOLIDARY_TAX = TaxesCzConstants2011.IS_ZERO_SOLIDARY_TAX;
-		public static readonly decimal FACTOR_SOLIDARY = TaxesCzConstants2011.FACTOR_SOLIDARY;
-		public static readonly long BRACKET_MAX_SOLIDARY = TaxesCzConstants2011.BRACKET_MAX_SOLIDARY;
+	class TaxingCzConstants2012
+	{ 
+		public const Int32 ALLOWANCE_PAYER_BASIC = 2070; 
+		public const Int32 ALLOWANCE_PAYER_DIS_1ST = TaxingCzConstants2011.ALLOWANCE_PAYER_DIS_1ST; 
+		public const Int32 ALLOWANCE_PAYER_DIS_2ND = TaxingCzConstants2011.ALLOWANCE_PAYER_DIS_2ND; 
+		public const Int32 ALLOWANCE_PAYER_DIS_3RD = TaxingCzConstants2011.ALLOWANCE_PAYER_DIS_3RD; 
+		public const Int32 ALLOWANCE_PAYER_STUDYING = TaxingCzConstants2011.ALLOWANCE_PAYER_STUDYING; 
+		public const Int32 ALLOWANCE_CHILD_RANK_1ST = TaxingCzConstants2011.ALLOWANCE_CHILD_RANK_1ST; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND = TaxingCzConstants2011.ALLOWANCE_CHILD_RANK_2ND; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD = TaxingCzConstants2011.ALLOWANCE_CHILD_RANK_3RD; 
+		public const decimal FACTOR_ADVANCES = TaxingCzConstants2011.FACTOR_ADVANCES; 
+		public const decimal FACTOR_WITHHOLD = TaxingCzConstants2011.FACTOR_WITHHOLD; 
+		public const decimal FACTOR_SOLIDARY = TaxingCzConstants2011.FACTOR_SOLIDARY; 
+		public const Int32 MIN_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2011.MIN_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MAX_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2011.MAX_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MIN_INCOME_REQUIRED_FOR_TAXBONUS = TaxingCzConstants2011.MIN_INCOME_REQUIRED_FOR_TAXBONUS; 
+		public const Int32 MAX_INCOME_APPLY_SINGELS_ROUNDING = TaxingCzConstants2011.MAX_INCOME_APPLY_SINGELS_ROUNDING; 
+		public const Int32 MAX_INCOME_APPLY_WITHHOLD_TAX = TaxingCzConstants2011.MAX_INCOME_APPLY_WITHHOLD_TAX; 
+		public const Int32 MIN_INCOME_APPLY_SOLIDARY_INCREASE = TaxingCzConstants2011.MIN_INCOME_APPLY_SOLIDARY_INCREASE; 
 	}
-
-	class TaxesCzConstants2013
-	{
-		public static readonly long BENEFIT_PAYER = TaxesCzConstants2012.BENEFIT_PAYER;
-
-		public static readonly long BENEFIT_DISABILITY_1 = TaxesCzConstants2012.BENEFIT_DISABILITY_1;
-		public static readonly long BENEFIT_DISABILITY_2 = TaxesCzConstants2012.BENEFIT_DISABILITY_2;
-		public static readonly long BENEFIT_DISABILITY_3 = TaxesCzConstants2012.BENEFIT_DISABILITY_3;
-
-		public static readonly long BENEFIT_STUDYING = TaxesCzConstants2012.BENEFIT_STUDYING;
-		public static readonly long BENEFIT_CHILD = TaxesCzConstants2012.BENEFIT_CHILD;
-
-		public static readonly long BRACKET_MAX_WITHHOLD = TaxesCzConstants2012.BRACKET_MAX_WITHHOLD;
-		public static readonly decimal FACTOR_ADVANCE = TaxesCzConstants2012.FACTOR_ADVANCE;
-		public static readonly decimal FACTOR_WITHHOLD = TaxesCzConstants2012.FACTOR_WITHHOLD;
-
-		public static readonly bool IS_SMALLER_ROUND_UP = TaxesCzConstants2012.IS_SMALLER_ROUND_UP;
-		public static readonly long BRACKET_MAX_SMALLER = TaxesCzConstants2012.BRACKET_MAX_SMALLER;
-
-		public static readonly bool IS_ZERO_SOLIDARY_TAX = false;
-		public static readonly decimal FACTOR_SOLIDARY = 7.0m;
-		public static readonly long BRACKET_MAX_SOLIDARY = (4 * 25884);
+	class TaxingCzConstants2013
+	{ 
+		public const Int32 ALLOWANCE_PAYER_BASIC = TaxingCzConstants2012.ALLOWANCE_PAYER_BASIC; 
+		public const Int32 ALLOWANCE_PAYER_DIS_1ST = TaxingCzConstants2012.ALLOWANCE_PAYER_DIS_1ST; 
+		public const Int32 ALLOWANCE_PAYER_DIS_2ND = TaxingCzConstants2012.ALLOWANCE_PAYER_DIS_2ND; 
+		public const Int32 ALLOWANCE_PAYER_DIS_3RD = TaxingCzConstants2012.ALLOWANCE_PAYER_DIS_3RD; 
+		public const Int32 ALLOWANCE_PAYER_STUDYING = TaxingCzConstants2012.ALLOWANCE_PAYER_STUDYING; 
+		public const Int32 ALLOWANCE_CHILD_RANK_1ST = TaxingCzConstants2012.ALLOWANCE_CHILD_RANK_1ST; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND = TaxingCzConstants2012.ALLOWANCE_CHILD_RANK_2ND; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD = TaxingCzConstants2012.ALLOWANCE_CHILD_RANK_3RD; 
+		public const decimal FACTOR_ADVANCES = TaxingCzConstants2012.FACTOR_ADVANCES; 
+		public const decimal FACTOR_WITHHOLD = TaxingCzConstants2012.FACTOR_WITHHOLD; 
+		public const decimal FACTOR_SOLIDARY = 7.0m; 
+		public const Int32 MIN_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2012.MIN_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MAX_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2012.MAX_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MIN_INCOME_REQUIRED_FOR_TAXBONUS = TaxingCzConstants2012.MIN_INCOME_REQUIRED_FOR_TAXBONUS; 
+		public const Int32 MAX_INCOME_APPLY_SINGELS_ROUNDING = TaxingCzConstants2012.MAX_INCOME_APPLY_SINGELS_ROUNDING; 
+		public const Int32 MAX_INCOME_APPLY_WITHHOLD_TAX = TaxingCzConstants2012.MAX_INCOME_APPLY_WITHHOLD_TAX; 
+		public const Int32 MIN_INCOME_APPLY_SOLIDARY_INCREASE = 103536; 
 	}
-
-	class TaxesCzConstants2014
-	{
-		public static readonly long BENEFIT_PAYER = TaxesCzConstants2013.BENEFIT_PAYER;
-
-		public static readonly long BENEFIT_DISABILITY_1 = TaxesCzConstants2013.BENEFIT_DISABILITY_1;
-		public static readonly long BENEFIT_DISABILITY_2 = TaxesCzConstants2013.BENEFIT_DISABILITY_2;
-		public static readonly long BENEFIT_DISABILITY_3 = TaxesCzConstants2013.BENEFIT_DISABILITY_3;
-
-		public static readonly long BENEFIT_STUDYING = TaxesCzConstants2013.BENEFIT_STUDYING;
-		public static readonly long BENEFIT_CHILD = TaxesCzConstants2013.BENEFIT_CHILD;
-
-		public static readonly long BRACKET_MAX_WITHHOLD = TaxesCzConstants2013.BRACKET_MAX_WITHHOLD;
-		public static readonly decimal FACTOR_ADVANCE = TaxesCzConstants2013.FACTOR_ADVANCE;
-		public static readonly decimal FACTOR_WITHHOLD = TaxesCzConstants2013.FACTOR_WITHHOLD;
-
-		public static readonly bool IS_SMALLER_ROUND_UP = TaxesCzConstants2013.IS_SMALLER_ROUND_UP;
-		public static readonly long BRACKET_MAX_SMALLER = TaxesCzConstants2013.BRACKET_MAX_SMALLER;
-
-		public static readonly bool IS_ZERO_SOLIDARY_TAX = TaxesCzConstants2013.IS_ZERO_SOLIDARY_TAX;
-		public static readonly decimal FACTOR_SOLIDARY = TaxesCzConstants2013.FACTOR_SOLIDARY;
-		public static readonly long BRACKET_MAX_SOLIDARY = (4 * 25942);
+	class TaxingCzConstants2014
+	{ 
+		public const Int32 ALLOWANCE_PAYER_BASIC = TaxingCzConstants2013.ALLOWANCE_PAYER_BASIC; 
+		public const Int32 ALLOWANCE_PAYER_DIS_1ST = TaxingCzConstants2013.ALLOWANCE_PAYER_DIS_1ST; 
+		public const Int32 ALLOWANCE_PAYER_DIS_2ND = TaxingCzConstants2013.ALLOWANCE_PAYER_DIS_2ND; 
+		public const Int32 ALLOWANCE_PAYER_DIS_3RD = TaxingCzConstants2013.ALLOWANCE_PAYER_DIS_3RD; 
+		public const Int32 ALLOWANCE_PAYER_STUDYING = TaxingCzConstants2013.ALLOWANCE_PAYER_STUDYING; 
+		public const Int32 ALLOWANCE_CHILD_RANK_1ST = TaxingCzConstants2013.ALLOWANCE_CHILD_RANK_1ST; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND = TaxingCzConstants2013.ALLOWANCE_CHILD_RANK_2ND; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD = TaxingCzConstants2013.ALLOWANCE_CHILD_RANK_3RD; 
+		public const decimal FACTOR_ADVANCES = TaxingCzConstants2013.FACTOR_ADVANCES; 
+		public const decimal FACTOR_WITHHOLD = TaxingCzConstants2013.FACTOR_WITHHOLD; 
+		public const decimal FACTOR_SOLIDARY = TaxingCzConstants2013.FACTOR_SOLIDARY; 
+		public const Int32 MIN_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2013.MIN_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MAX_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2013.MAX_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MIN_INCOME_REQUIRED_FOR_TAXBONUS = 8500; 
+		public const Int32 MAX_INCOME_APPLY_SINGELS_ROUNDING = TaxingCzConstants2013.MAX_INCOME_APPLY_SINGELS_ROUNDING; 
+		public const Int32 MAX_INCOME_APPLY_WITHHOLD_TAX = 10000; public const Int32 MIN_INCOME_APPLY_SOLIDARY_INCREASE = 103768; 
 	}
-
-	class TaxesCzConstants2015
-	{
-		public static readonly long BENEFIT_PAYER = TaxesCzConstants2013.BENEFIT_PAYER;
-
-		public static readonly long BENEFIT_DISABILITY_1 = TaxesCzConstants2014.BENEFIT_DISABILITY_1;
-		public static readonly long BENEFIT_DISABILITY_2 = TaxesCzConstants2014.BENEFIT_DISABILITY_2;
-		public static readonly long BENEFIT_DISABILITY_3 = TaxesCzConstants2014.BENEFIT_DISABILITY_3;
-
-		public static readonly long BENEFIT_STUDYING = TaxesCzConstants2014.BENEFIT_STUDYING;
-		public static readonly long BENEFIT_CHILD = TaxesCzConstants2014.BENEFIT_CHILD;
-
-		public static readonly long BRACKET_MAX_WITHHOLD = TaxesCzConstants2014.BRACKET_MAX_WITHHOLD;
-		public static readonly decimal FACTOR_ADVANCE = TaxesCzConstants2014.FACTOR_ADVANCE;
-		public static readonly decimal FACTOR_WITHHOLD = TaxesCzConstants2014.FACTOR_WITHHOLD;
-
-		public static readonly bool IS_SMALLER_ROUND_UP = TaxesCzConstants2014.IS_SMALLER_ROUND_UP;
-		public static readonly long BRACKET_MAX_SMALLER = TaxesCzConstants2014.BRACKET_MAX_SMALLER;
-
-		public static readonly bool IS_ZERO_SOLIDARY_TAX = TaxesCzConstants2014.IS_ZERO_SOLIDARY_TAX;
-		public static readonly decimal FACTOR_SOLIDARY = TaxesCzConstants2014.FACTOR_SOLIDARY;
-		public static readonly long BRACKET_MAX_SOLIDARY = (4 * 25942);
+	class TaxingCzConstants2015
+	{ 
+		public const Int32 ALLOWANCE_PAYER_BASIC = TaxingCzConstants2014.ALLOWANCE_PAYER_BASIC; 
+		public const Int32 ALLOWANCE_PAYER_DIS_1ST = TaxingCzConstants2014.ALLOWANCE_PAYER_DIS_1ST; 
+		public const Int32 ALLOWANCE_PAYER_DIS_2ND = TaxingCzConstants2014.ALLOWANCE_PAYER_DIS_2ND; 
+		public const Int32 ALLOWANCE_PAYER_DIS_3RD = TaxingCzConstants2014.ALLOWANCE_PAYER_DIS_3RD; 
+		public const Int32 ALLOWANCE_PAYER_STUDYING = TaxingCzConstants2014.ALLOWANCE_PAYER_STUDYING; 
+		public const Int32 ALLOWANCE_CHILD_RANK_1ST = TaxingCzConstants2014.ALLOWANCE_CHILD_RANK_1ST; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND = 1317; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD_01_TO_04 = 0;
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD = 1417; 
+		public const decimal FACTOR_ADVANCES = TaxingCzConstants2014.FACTOR_ADVANCES; 
+		public const decimal FACTOR_WITHHOLD = TaxingCzConstants2014.FACTOR_WITHHOLD; 
+		public const decimal FACTOR_SOLIDARY = TaxingCzConstants2014.FACTOR_SOLIDARY; 
+		public const Int32 MIN_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2014.MIN_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MAX_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2014.MAX_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MIN_INCOME_REQUIRED_FOR_TAXBONUS = 9200; 
+		public const Int32 MAX_INCOME_APPLY_SINGELS_ROUNDING = TaxingCzConstants2014.MAX_INCOME_APPLY_SINGELS_ROUNDING; 
+		public const Int32 MAX_INCOME_APPLY_WITHHOLD_TAX = TaxingCzConstants2014.MAX_INCOME_APPLY_WITHHOLD_TAX; 
+		public const Int32 MIN_INCOME_APPLY_SOLIDARY_INCREASE = 106444; 
 	}
-
-	class TaxesCzConstants2016
-	{
-		public static readonly long BENEFIT_PAYER = TaxesCzConstants2015.BENEFIT_PAYER;
-
-		public static readonly long BENEFIT_DISABILITY_1 = TaxesCzConstants2015.BENEFIT_DISABILITY_1;
-		public static readonly long BENEFIT_DISABILITY_2 = TaxesCzConstants2015.BENEFIT_DISABILITY_2;
-		public static readonly long BENEFIT_DISABILITY_3 = TaxesCzConstants2015.BENEFIT_DISABILITY_3;
-
-		public static readonly long BENEFIT_STUDYING = TaxesCzConstants2015.BENEFIT_STUDYING;
-		public static readonly long BENEFIT_CHILD = TaxesCzConstants2015.BENEFIT_CHILD;
-
-		public static readonly long BRACKET_MAX_WITHHOLD = TaxesCzConstants2015.BRACKET_MAX_WITHHOLD;
-		public static readonly decimal FACTOR_ADVANCE = TaxesCzConstants2015.FACTOR_ADVANCE;
-		public static readonly decimal FACTOR_WITHHOLD = TaxesCzConstants2015.FACTOR_WITHHOLD;
-
-		public static readonly bool IS_SMALLER_ROUND_UP = TaxesCzConstants2015.IS_SMALLER_ROUND_UP;
-		public static readonly long BRACKET_MAX_SMALLER = TaxesCzConstants2015.BRACKET_MAX_SMALLER;
-
-		public static readonly bool IS_ZERO_SOLIDARY_TAX = TaxesCzConstants2015.IS_ZERO_SOLIDARY_TAX;
-		public static readonly decimal FACTOR_SOLIDARY = TaxesCzConstants2015.FACTOR_SOLIDARY;
-		public static readonly long BRACKET_MAX_SOLIDARY = (4 * 25942);
+	class TaxingCzConstants2016
+	{ 
+		public const Int32 ALLOWANCE_PAYER_BASIC = TaxingCzConstants2015.ALLOWANCE_PAYER_BASIC; 
+		public const Int32 ALLOWANCE_PAYER_DIS_1ST = TaxingCzConstants2015.ALLOWANCE_PAYER_DIS_1ST; 
+		public const Int32 ALLOWANCE_PAYER_DIS_2ND = TaxingCzConstants2015.ALLOWANCE_PAYER_DIS_2ND; 
+		public const Int32 ALLOWANCE_PAYER_DIS_3RD = TaxingCzConstants2015.ALLOWANCE_PAYER_DIS_3RD; 
+		public const Int32 ALLOWANCE_PAYER_STUDYING = TaxingCzConstants2015.ALLOWANCE_PAYER_STUDYING; 
+		public const Int32 ALLOWANCE_CHILD_RANK_1ST = TaxingCzConstants2015.ALLOWANCE_CHILD_RANK_1ST; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND_01_TO_04 = 1317; 
+		public const Int32 ALLOWANCE_CHILD_RANK_2ND = 1417; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD_01_TO_04 = 1417; 
+		public const Int32 ALLOWANCE_CHILD_RANK_3RD = 1717; 
+		public const decimal FACTOR_ADVANCES = TaxingCzConstants2015.FACTOR_ADVANCES; 
+		public const decimal FACTOR_WITHHOLD = TaxingCzConstants2015.FACTOR_WITHHOLD; 
+		public const decimal FACTOR_SOLIDARY = TaxingCzConstants2015.FACTOR_SOLIDARY; 
+		public const Int32 MIN_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2015.MIN_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MAX_VALID_AMOUNT_OF_TAXBONUS = TaxingCzConstants2015.MAX_VALID_AMOUNT_OF_TAXBONUS; 
+		public const Int32 MIN_INCOME_REQUIRED_FOR_TAXBONUS = 9900; 
+		public const Int32 MAX_INCOME_APPLY_SINGELS_ROUNDING = TaxingCzConstants2015.MAX_INCOME_APPLY_SINGELS_ROUNDING; 
+		public const Int32 MAX_INCOME_APPLY_WITHHOLD_TAX = TaxingCzConstants2015.MAX_INCOME_APPLY_WITHHOLD_TAX; 
+		public const Int32 MIN_INCOME_APPLY_SOLIDARY_INCREASE = 108024; 
 	}
 }

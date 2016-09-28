@@ -46,6 +46,7 @@
     <Compile Include="Constants\TaxingCzConstants.cs" />
     <Compile Include="Constants\SocialCzConstants.cs" />
     <Compile Include="Constants\HealthCzConstants.cs" />
+    <Compile Include="Constants\PeriodCzConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
