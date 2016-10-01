@@ -104,7 +104,7 @@ namespace PaycheckitasFeatures
 		}
 
 		[Given(@"Employee Bonus is (.*) percent from CZK (.*)")]
-		public void GivenEmployeeBonusIsPercentFromCZK(int bonusAmount, int bonusPercent)
+		public void GivenEmployeeBonusIsPercentFromCZK(int bonusPercent, int bonusAmount)
 		{
 			PayrollData target = MyTestPayrollData();
 			target.BonusAmount = DecimalOperations.DecimalCast(bonusAmount);
